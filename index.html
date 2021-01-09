@@ -44,7 +44,7 @@
         <!-- Баннер -->
         <section class="hero">
             <h1 class="hero-title">Эффективные решения <br> для вашего бизнеса</h1>
-            <a href="" class="button">Заказать услугу</a>
+            <button class="button" data-modal-open>Заказать услугу</button>
         </section>
 
         <!-- Особенности -->
@@ -363,6 +363,27 @@
                 </div>
             </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <p>Оставьте свои данные, мы вам перезвоним</p>
+            <button data-modal-close>Отправить</button>
+        </div>
+    </div>
+    <script>
+        const refs = {
+                openModalBtn: document.querySelector('[data-modal-open]'),
+                closeModalBtn: document.querySelector('[data-modal-close]'),
+                modal: document.querySelector('[data-modal]'),
+            };
+
+            refs.openModalBtn.addEventListener('click', toggleModal);
+            refs.closeModalBtn.addEventListener('click', toggleModal);
+
+            function toggleModal() {
+                refs.modal.classList.toggle('is-hidden');
+            }
+    </script>
 </body>
 
 </html>
