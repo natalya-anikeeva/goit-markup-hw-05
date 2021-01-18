@@ -255,9 +255,11 @@ h2 {
   display: flex;
   justify-content: space-between;
 }
-
-.features-item {
+.features-items {
   width: 270px;
+}
+.features-item {
+  width: 370px;
 }
 
 .features-title {
@@ -540,27 +542,42 @@ h3 {
 }
 
 .examples-links {
+  position: relative;
+
   width: 370px;
   margin: 15px;
   border: 1px solid #eeeeee;
-
-  position: relative;
 }
 .examples-links:hover,
 .examples-links:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.box {
+  position: relative;
+  width: 100%;
+  height: 100%;
 
+  overflow: hidden;
+}
+.box:hover .overlay {
+  transform: translateY(0);
+}
 .description-position {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: 250ms opacity;
 }
-.description-position:hover {
-  opacity: 1;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms;
 }
 
 .examples-description {
@@ -570,12 +587,6 @@ h3 {
   margin: 0;
   padding: 63px 24px;
   color: var(--text-white-color);
-  background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
-}
-
-.examples-description:hover {
-  opacity: 1;
 }
 
 .examples-title {
@@ -640,20 +651,32 @@ a {
   text-decoration: none;
 }
 
+.features-image {
+  display: block;
+}
+.features-item {
+  position: relative;
+}
+
 .works-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: inline-block;
+  width: 370px;
+  height: 70px;
+  margin: 0;
+  padding: 27px 0;
+
   color: var(--text-white-color);
   background: rgba(47, 48, 58, 0.8);
 
-  font-weight: 700;
+  font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  margin: 0;
-}
-
-.works-description:focus,
-.works-description:hover {
-  color: var(--accent-color);
+  text-align: center;
 }
 
 .team-icons:focus,
